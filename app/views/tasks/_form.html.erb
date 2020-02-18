@@ -1,0 +1,19 @@
+<%= form_for(task) do |t| %>
+
+<div class="form-group">
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+
+  <%= t.label :details %>
+  <%= t.text_field :details %>
+</div>
+
+
+  <% unless t.object.new_record?()  %>
+ <label> <%= t.check_box :completed %> Completed</label>
+  <% end %>
+
+
+  <%= t.submit %>
+
+<% end %>
